@@ -13,7 +13,7 @@ function xenopanel2_ConfigOptions() {
     'Type' => 'text',
     'Size' => '15',
     'Default' => '',
-    'Description' => 'Manage packages in XenoPanel by going to Admin Dashboard > Configuration > Module Plans Manager',
+    'Description' => 'Manage packages in XenoPanel by going to Admin Dashboard > API > Module Plans Manager',
     )
   ); return $configarray;
 }
