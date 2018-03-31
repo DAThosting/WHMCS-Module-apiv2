@@ -15,14 +15,14 @@ Custom Fields:
 - "Minecraft Username" (Input Box)
 - "Username" (Input Box)
 - "Server Name" (Input Box)
-- "Dedicated IP" (TickBox)
 - "Server Location" (Dropdown)
 - "Source Game" (Dropdown)
 
 Custom Options:
 
+- "Dedicated IP" (TickBox)
 - "Slots" (Dropdown)
-- "Memory (Dropdown)
+- "Memory" (Dropdown)
 - "Storage" (Dropdown)
 - "CPU Limit" (Dropdown)
-- Slot Changing (Yes/No or Tickbox)
+- "Slot Changing" (Yes/No or Tickbox)
