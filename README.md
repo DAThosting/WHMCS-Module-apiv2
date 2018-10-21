@@ -17,6 +17,7 @@ Custom Fields:
 - "Server Name" (Input Box)
 - "Server Location" (Dropdown)
 - "Source Game" (Dropdown)
+- "ID" (Input Box and Admin only! Don't rename this via ID|Indentity!)
 
 Custom Options:
 
