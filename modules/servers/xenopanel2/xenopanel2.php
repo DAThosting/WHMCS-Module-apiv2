@@ -18,6 +18,15 @@ function xenopanel2_ConfigOptions() {
   ); return $configarray;
 }
 
+function xenopanel2_MetaData()
+{
+    return array(
+        'DisplayName' => 'XenoPanel Hosting Module',
+        'APIVersion' => '1.1', // Use API Version 1.1
+        'RequiresServer' => true // Set true if module requires a server to work
+    );
+}
+
 // =============================================================================== //
 //
 // SERVER MANAGE
@@ -73,7 +82,7 @@ function xenopanel2_CreateAccount($params){
         $values["serviceusername"] = $data['username'];
         $values["servicepassword"] = $data['password'];
         $values["dedicatedip"] = $data['ip_address'].":".$data['port'];
-        $values["domain"] = $data['server_id'];
+        $values["customfields"] = base64_encode(serialize(array('ID' => $data["server_id"])));
 
         localAPI($command, $values, $params["serverusername"]);
         $results = localAPI($command, $values, $params["serverusername"]);
@@ -119,7 +128,7 @@ function xenopanel2_TerminateAccount($params) {
       $values["serviceusername"] = " ";
       $values["servicepassword"] = " ";
       $values["dedicatedip"] = " ";
-      $values["domain"] = " ";
+      $values["customfields"] = base64_encode(serialize(array('ID' => ' ')));
 
       localAPI($command, $values, $params["serverusername"]);
       $results = localAPI($command, $values, $params["serverusername"]);
@@ -298,6 +307,21 @@ function xenopanel2_TestConnection(array $params){
     }
 
 }
+
+function xenopanel2_ClientArea(array $params)
+{	
+    return array(
+        'templatefile' => 'clientarea',
+        'vars' => array(
+            'domadin' => $domain
+        )
+    );
+
+    if (curl_error($ch1)) {
+        throw new Exception(curl_error($ch1));
+    }
+}
+
 
 // =============================================================================== //
 //
