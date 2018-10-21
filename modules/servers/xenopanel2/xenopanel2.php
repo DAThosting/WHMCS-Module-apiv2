@@ -308,21 +308,6 @@ function xenopanel2_TestConnection(array $params){
 
 }
 
-function xenopanel2_ClientArea(array $params)
-{	
-    return array(
-        'templatefile' => 'clientarea',
-        'vars' => array(
-            'domadin' => $domain
-        )
-    );
-
-    if (curl_error($ch1)) {
-        throw new Exception(curl_error($ch1));
-    }
-}
-
-
 // =============================================================================== //
 //
 // CONTROL FUNCTIONS
